@@ -1,0 +1,712 @@
+.mdm-builder(@direction, @size, @time) {
+  // Icon
+  .md-menu {
+    button {
+      display: block;
+      border: none;
+      background: none;
+      outline: 0;
+    }
+    .mdm-icon {
+      padding: 1rem 1rem;
+      cursor: pointer;
+      .mdm-layer {
+        display: block;
+        width: @size;
+        height: round(@size / 10, 2);
+        background: #eee;
+        position: relative;
+        -webkit-animation-duration: @time;
+                animation-duration: @time;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        &:before, &:after {
+          display: block;
+          width: inherit;
+          height: round(@size / 10, 2);
+          position: absolute;
+          background: inherit;
+          .direction; // left: 0; or right: 0 is set here depending on the direction of the arrow
+          content: '';
+          -webkit-animation-duration: @time;
+                  animation-duration: @time;
+          -webkit-animation-timing-function: ease-in-out;
+                  animation-timing-function: ease-in-out;
+        }
+        &:before {
+          bottom: 200%;
+        }
+        &:after {
+          top: 200%;
+        }
+      }
+    }
+  }
+
+
+  // Keyframe animations classes
+  // Mixins for setting angles
+  .rotation(@direction);
+
+  .rotation(@arrow-direction) when (@direction = top) {
+    .direction {
+      left: 0;
+    }
+    .to-arrow-top {
+      -webkit-animation-name: icon--slide--top;
+              animation-name: icon--slide--top;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-top:before {
+      -webkit-animation-name: icon--slide--top-before;
+              animation-name: icon--slide--top-before;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-top:after {
+      -webkit-animation-name: icon--slide--top-after;
+              animation-name: icon--slide--top-after;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .from-arrow-top {
+      -webkit-animation-name: icon--slide--top-from;
+              animation-name: icon--slide--top-from;
+    }
+
+    .from-arrow-top:before {
+      -webkit-animation-name: icon--slide--top-before-from;
+              animation-name: icon--slide--top-before-from;
+    }
+
+    .from-arrow-top:after {
+      -webkit-animation-name: icon--slide--top-after-from;
+              animation-name: icon--slide--top-after-from;
+    }
+  }
+  .rotation(@arrow-direction) when (@direction = bottom) {
+    .direction {
+      left: 0;
+    }
+    .to-arrow-bottom {
+      -webkit-animation-name: icon--slide--bottom;
+              animation-name: icon--slide--bottom;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-bottom:before {
+      -webkit-animation-name: icon--slide--bottom-before;
+              animation-name: icon--slide--bottom-before;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-bottom:after {
+      -webkit-animation-name: icon--slide--bottom-after;
+              animation-name: icon--slide--bottom-after;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .from-arrow-bottom {
+      -webkit-animation-name: icon--slide--bottom-from;
+              animation-name: icon--slide--bottom-from;
+    }
+
+    .from-arrow-bottom:before {
+      -webkit-animation-name: icon--slide--bottom-before-from;
+              animation-name: icon--slide--bottom-before-from;
+    }
+
+    .from-arrow-bottom:after {
+      -webkit-animation-name: icon--slide--bottom-after-from;
+              animation-name: icon--slide--bottom-after-from;
+    }
+  }
+  .rotation(@arrow-direction) when (@direction = right) {
+    .direction {
+      right: 0;
+    }
+    .to-arrow-right {
+      -webkit-animation-name: icon--slide--right;
+              animation-name: icon--slide--right;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-right:before {
+      -webkit-animation-name: icon--slide--right-before;
+              animation-name: icon--slide--right-before;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-right:after {
+      -webkit-animation-name: icon--slide--right-after;
+              animation-name: icon--slide--right-after;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .from-arrow-right {
+      -webkit-animation-name: icon--slide--right-from;
+              animation-name: icon--slide--right-from;
+    }
+
+    .from-arrow-right:before {
+      -webkit-animation-name: icon--slide--right-before-from;
+              animation-name: icon--slide--right-before-from;
+    }
+
+    .from-arrow-right:after {
+      -webkit-animation-name: icon--slide--right-after-from;
+              animation-name: icon--slide--right-after-from;
+    }
+  }
+  .rotation(@arrow-direction) when (@direction = left) {
+    .direction {
+      left: 0;
+    }
+    .to-arrow-left {
+      -webkit-animation-name: icon--slide--left;
+              animation-name: icon--slide--left;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-left:before {
+      -webkit-animation-name: icon--slide--left-before;
+              animation-name: icon--slide--left-before;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .to-arrow-left:after {
+      -webkit-animation-name: icon--slide--left-after;
+              animation-name: icon--slide--left-after;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+    }
+
+    .from-arrow-left {
+      -webkit-animation-name: icon--slide--left-from;
+              animation-name: icon--slide--left-from;
+    }
+
+    .from-arrow-left:before {
+      -webkit-animation-name: icon--slide--left-before-from;
+              animation-name: icon--slide--left-before-from;
+    }
+
+    .from-arrow-left:after {
+      -webkit-animation-name: icon--slide--left-after-from;
+              animation-name: icon--slide--left-after-from;
+    }
+  }
+  // Keyframe animations
+  // Top
+  @-webkit-keyframes icon--slide--top {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+  }
+
+  @keyframes icon--slide--top {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+  }
+
+  @-webkit-keyframes icon--slide--top-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--top-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--top-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--top-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--top-from {
+    0% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--top-from {
+    0% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--top-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--top-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--top-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--top-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+  // End Top
+  // Bottom
+  @-webkit-keyframes icon--slide--bottom {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+  }
+
+  @keyframes icon--slide--bottom {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+  }
+
+  @-webkit-keyframes icon--slide--bottom-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--bottom-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--bottom-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--bottom-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--bottom-from {
+    0% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--bottom-from {
+    0% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--bottom-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--bottom-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--bottom-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--bottom-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+  // End bottom
+  // Left
+  @-webkit-keyframes icon--slide--left {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+    }
+  }
+
+  @keyframes icon--slide--left {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+    }
+  }
+
+  @-webkit-keyframes icon--slide--left-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--left-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--left-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--left-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--left-from {
+    0% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--left-from {
+    0% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--left-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--left-before-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--left-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--left-after-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+  // End left
+  // Right
+  @-webkit-keyframes icon--slide--right {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+  }
+
+  @keyframes icon--slide--right {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+  }
+
+  @-webkit-keyframes icon--slide--right-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--right-before {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--right-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @keyframes icon--slide--right-after {
+    0% {
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+  }
+
+  @-webkit-keyframes icon--slide--right-from {
+    0% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--right-from {
+    0% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--right-before-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--right-before-from {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @-webkit-keyframes icon--slide--right-after-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+
+  @keyframes icon--slide--right-after-from {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin: 3% 37%;
+      width: 75%;
+    }
+    100% {
+    }
+  }
+  // End right
+}
