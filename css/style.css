@@ -335,8 +335,8 @@ section.footer .dedication {
 }
 .box-1 .md-menu .mdm-icon .mdm-layer {
   display: block;
-  width: 10em;
-  height: 1em;
+  width: 100px;
+  height: 10px;
   background: #eee;
   position: relative;
   -webkit-animation-duration: 300ms;
@@ -348,7 +348,7 @@ section.footer .dedication {
 .box-1 .md-menu .mdm-icon .mdm-layer:after {
   display: block;
   width: inherit;
-  height: 1em;
+  height: 10px;
   position: absolute;
   background: inherit;
   left: 0;
@@ -761,8 +761,8 @@ section.footer .dedication {
 }
 .box-2 .md-menu .mdm-icon .mdm-layer {
   display: block;
-  width: 10em;
-  height: 1em;
+  width: 100px;
+  height: 10px;
   background: #eee;
   position: relative;
   -webkit-animation-duration: 300ms;
@@ -774,7 +774,7 @@ section.footer .dedication {
 .box-2 .md-menu .mdm-icon .mdm-layer:after {
   display: block;
   width: inherit;
-  height: 1em;
+  height: 10px;
   position: absolute;
   background: inherit;
   right: 0;
@@ -1187,8 +1187,8 @@ section.footer .dedication {
 }
 .box-3 .md-menu .mdm-icon .mdm-layer {
   display: block;
-  width: 10em;
-  height: 1em;
+  width: 100px;
+  height: 10px;
   background: #eee;
   position: relative;
   -webkit-animation-duration: 300ms;
@@ -1200,7 +1200,7 @@ section.footer .dedication {
 .box-3 .md-menu .mdm-icon .mdm-layer:after {
   display: block;
   width: inherit;
-  height: 1em;
+  height: 10px;
   position: absolute;
   background: inherit;
   left: 0;
@@ -1613,8 +1613,8 @@ section.footer .dedication {
 }
 .box-4 .md-menu .mdm-icon .mdm-layer {
   display: block;
-  width: 10em;
-  height: 1em;
+  width: 100px;
+  height: 10px;
   background: #eee;
   position: relative;
   -webkit-animation-duration: 300ms;
@@ -1626,7 +1626,7 @@ section.footer .dedication {
 .box-4 .md-menu .mdm-icon .mdm-layer:after {
   display: block;
   width: inherit;
-  height: 1em;
+  height: 10px;
   position: absolute;
   background: inherit;
   left: 0;
