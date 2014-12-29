@@ -1,8 +1,8 @@
-# MATERIAL DESIGN HAMBURGER MIXIN
+# MATERIAL DESIGN MENU MIXIN
 
-## An animated hamburger menu that animates in all directions
+## A less mixin to build hamburger menus pointing top, right, bottom and left, because menus can show up from all directions.
 
-View the project page at [http://mdme.nu](http://mdme.nu "Material design hamburger mixin")
+View the project page at [http://mdme.nu](http://mdme.nu "Material design hamburger menu mixin")
 
 ## What is this?
 
